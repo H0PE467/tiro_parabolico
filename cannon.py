@@ -8,6 +8,8 @@ Exercises
 4. Change the speed of the ball.
 
 """
+"EQUIPO 12 "
+"Isaac Jacinto Ruiz A01658578"
 
 from random import randrange
 from turtle import *
