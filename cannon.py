@@ -10,12 +10,13 @@ Exercises
 """
 "EQUIPO 12 "
 "Isaac Jacinto Ruiz A01658578"
+"Klaus Manuel Cedillo Arredondo A01653257"
 
+#Librerias
 from random import randrange
 from turtle import *
-
 from freegames import vector
-
+#Variables
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
@@ -67,9 +68,18 @@ def move():
     dupe = targets.copy()
     targets.clear()
 
+    #Reposiciona las bolas
     for target in dupe:
-        if abs(target - ball) > 13:
+        #Si el objetivo no se encuentra dentro de los limites
+        if inside(target):
+            if abs(target - ball) > 13:
+                targets.append(target)
+        #La transporta a otro lugar
+        else:
+            y = randrange(-150, 150)
+            target = vector(200, y)
             targets.append(target)
+        #Removiendo el return, el juego se vuelve infinito
 
     draw()
 
